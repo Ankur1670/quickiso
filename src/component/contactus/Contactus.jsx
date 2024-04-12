@@ -1,9 +1,37 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './contactus.css'
 import { IoIosArrowForward } from "react-icons/io";
 import i4 from '../../assets/contact-1.png'
+import axios from "axios";
 
+const client = axios.create({
+    baseURL: import.meta.env.VITE__APP_URL,
+    headers:{
+        'Content-Type': 'application/json',
+
+    },
+});
 const Contactus = () => {
+    const [type, setType] = useState ([])
+    const [data, setData] = useState ({})
+    const handelSubmit = (e) => {
+        e.preventDefault()
+        console.log(data)
+        const form =new FormData()
+        form.append('name',data['name'])
+        form.append('email',data['email'])
+        form.append('phone',data['phone'])
+        form.append('certificate_type',data['certificate_type'])
+        console.log(form)
+        client.post('/requestview/',data).then((r)=>{
+            if(r.status===200){
+                alert(r.data.message)
+            }
+        })
+    }
+    const handelChange = (e) => {
+        setData( {...data,[e.target.id]:e.target.value})
+    }
   return (
     <div className='contactus_section'>
       <div className="con_sec">
@@ -35,14 +63,14 @@ const Contactus = () => {
 </div>
 <div className="form_sec">
 <form action="" method='post'>
-    <label for="firstName">First Name:<span >*</span></label><br/>
-  <input type="text" id="firstName" name="firstName"/>  <br /> <br />
-  <label for="lastName">Last Name:<span >*</span></label><br/>
-  <input type="text" id="lastName" name="lastName"/> <br /> <br />
+    <label for="firstName" >Name:<span >*</span></label><br/>
+  <input type="text" id="name" onChange={handelChange} name="firstName" className={'form-control'}/>
+  <label for="lastName">Email:<span >*</span></label><br/>
+  <input type="email" id="email" onChange={handelChange} name="email" className={'form-control'}/>
 
-  <label for="email">Email:<span >*</span></label><br/>
-  <input type="email" id="email" name="email"/><br/><br/>
-  <button className='btn btn-primary '>Submit</button>
+  <label for="phone">Phone:<span >*</span></label><br/>
+  <input type="text" id="phone" onChange={handelChange} name="phone" className={'form-control'}/>
+  <button className='btn btn-primary my-3 ' type={'submit'} onClick={handelSubmit}>Submit</button>
 
     </form>
 </div>
