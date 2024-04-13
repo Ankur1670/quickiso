@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,700;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,700;1,700&display=swap');
 :root{
-  --tg-body-font-family: 'Plus Jakarta Sans', sans-serif;
     --tg-heading-font-family: 'Urbanist', sans-serif;
-    --tg-primary-color: #0055FF;
-    --tg-secondary-color: #00194C;
-    --tg-body-font-color: #687799;
-    --tg-heading-font-color: #00194C;
-    --tg-paragraph-color: #687799;
+    --tg-paragraph-font-family:'Plus Jakarta Sans', sans-serif;
+    --tg-primary-color: #73BBC9;
+    --tg-heading-font-color: #000000;
+    --tg-paragraph-color: #000000;
     --tg-section-background: #F8FAFF;
-    --tg-body-font-size: 16px;
-    --tg-body-font-weight: 500;
     --tg-heading-font-weight: 700;
-    --tg-body-line-height: 1.7;
     --tg-heading-line-height: 1.2;
 }
 body{
   overflow-x: hidden;
 }
+h1{
+  font-family:'Urbanist', sans-serif; 
+  font-weight: 700;
+  line-height: var( --tg-heading-line-height);
+  color : var(--tg-primary-color);
+  }
