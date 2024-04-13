@@ -48,7 +48,7 @@
   font-size: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #4361ee;
+  color: var(--root_color);
   background: #e6eeff;
   border-radius: 50px;
   display: inline-block;

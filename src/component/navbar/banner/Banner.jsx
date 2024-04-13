@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './banner.css';
 import img1 from '../../../assets/unlock.png';
 import get from '../../../assets/g2.png'
@@ -7,9 +7,62 @@ import c from '../../../assets/c.png'
 import ra from '../../../assets/ra.png'
 import em from '../../../assets/em.png'
 import { LuPhoneCall } from "react-icons/lu";
+import axios from "axios";
 
+const client = axios.create({
+    baseURL: import.meta.env.VITE__APP_URL,
+    headers:{
+        'Content-Type': 'application/json',
+
+    },
+});
+const Card = (obj) => {
+    console.log(obj)
+    return(
+        <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card my-2">
+                <img className="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
+                <div className="card-body">
+                    <h2 className="card-title">{obj.name} <br /> ₹{obj.price}/-
+                    </h2>
+                    <p className="card-text">{obj.description}</p>
+                    <a href="#" className="btn ">
+                        See Details                                                </a>
+
+                </div>
+            </div>
+        </div>
+
+
+    )
+}
 const Banner = () => {
-    
+    const [type, setType] = useState ([])
+    const [data, setData] = useState ({})
+    useEffect ( () => {
+        client.get('/certificate/type/views/').then((r)=>{
+            if(r.status===200){
+                setType(r.data)
+            }
+        })
+    }, [] );
+    const handelSubmit = (e) => {
+console.log(data)
+        const form =new FormData()
+        form.append('name',data['name'])
+        form.append('email',data['email'])
+        form.append('phone',data['phone'])
+        form.append('certificate_type',data['certificate_type'])
+        console.log(form)
+        client.post('/requestview/',data).then((r)=>{
+            if(r.status===200){
+                alert(r.data.message)
+            }
+        })
+    }
+    const handelChange = (e) => {
+        setData( {...data,[e.target.id]:e.target.value})
+    }
   return (
    <div className="banner-section">
     <div className="container bg-light">
@@ -105,168 +158,8 @@ Certification Services</h2>
     <div className="card_section">
         <div className="container">
             <div className="row">
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 22000:2018 <br /> ₹4000/-
-</h2>
-    <p class="card-text">Food Safety Management Systems: Ensure the safety and quality of food products and supply chains.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 14001:2015 ₹2500/-
-</h2>
-    <p class="card-text">Environmental Management Systems: Demonstrate your commitment to environmental responsibility and sustainability.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 13485:2016 ₹4000/-
-</h2>
-    <p class="card-text">Medical Devices Quality Management Systems: Ensure the quality and safety of medical devices throughout their lifecycle.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 20000:2011 ₹5000/-
-</h2>
-    <p class="card-text">IT Service Management Systems: Improve the efficiency and effectiveness of your IT service delivery.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
+                {type.map(Card)}
 
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 22000:2018 ₹4000/-
-</h2>
-    <p class="card-text">Food Safety Management Systems: Ensure the safety and quality of food products and supply chains.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 29993:2010 ₹6000/-
-</h2>
-    <p class="card-text">Learning Services for Non-Formal Education and Training: Enhance the quality and effectiveness of your training and educational programs.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 27001:2022 ₹4000/-
-</h2>
-    <p class="card-text">Information Security Management Systems: Protect your sensitive information and data assets from security threats.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 45001:2018 ₹3000/-
-</h2>
-    <p class="card-text">Occupational Health and Safety Management Systems: Ensure a safe and healthy work environment for your employees while meeting legal and regulatory requirements.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-
-
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 22000:2018 <br /> ₹4000/-
-</h2>
-    <p class="card-text">Food Safety Management Systems: Ensure the safety and quality of food products and supply chains.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 14001:2015 ₹2500/-
-</h2>
-    <p class="card-text">Environmental Management Systems: Demonstrate your commitment to environmental responsibility and sustainability.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 13485:2016 ₹4000/-
-</h2>
-    <p class="card-text">Medical Devices Quality Management Systems: Ensure the quality and safety of medical devices throughout their lifecycle.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 20000:2011 ₹5000/-
-</h2>
-    <p class="card-text">IT Service Management Systems: Improve the efficiency and effectiveness of your IT service delivery.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
             </div>
         </div>
     </div>
@@ -279,38 +172,37 @@ Certification Services</h2>
 <h2 className='text-center mt-2'>REQUEST A QUOTE FOR ISO CERTIFICATION</h2>
 <div className="row">
     <div className="col-lg-12 col-md-12 col-sm-12">
-    <form action="" method="post"/>
-  <label for="certificate" >Select Certificate:<span >*</span></label><br/>
-  <select id="certificate" name="certificate" >
-    <option value="certificate1" >Certificate 1</option>
-    <option value="certificate2">Certificate 2</option>
-    <option value="certificate3">Certificate 3</option>
-    <option value="certificate3">Certificate 3</option>
-    <option value="certificate3">Certificate 3</option>
-    <option value="certificate3">Certificate 3</option>
-
-    <option value="certificate3">Certificate 3</option>
-    
-
-
-    
+    <form action={import.meta.env.VITE__APP_URL+'/requestview'} method="post"/>
+        
+      <label form="certificate" >Select Certificate:<span >*</span></label><br/>
+      <select id="certificate_type" name="certificate_type"
+              onChange={handelChange}
+              // onClick={handelChange}
+              required={true}>
+          <option value={"none"}  >-------</option>
+          {type?.map((obj,key)=><option value={obj.id} key={key} >{obj.name}</option>)}
 
 
 
-  </select><br/><br/>
 
-  <label for="firstName">First Name:<span >*</span></label><br/>
-  <input type="text" id="firstName" name="firstName"/>  <br /> <br />
-  <label for="lastName">Last Name:<span >*</span></label><br/>
-  <input type="text" id="lastName" name="lastName"/> <br /> <br />
 
-  <label for="email">Email:<span >*</span></label><br/>
-  <input type="email" id="email" name="email"/><br/><br/>
 
-  <label for="phone">Phone Number: <span >*</span></label><br/>
-  <input type="tel" id="phone" name="phone" required/><br/><br/>
 
-<button className='btn btn-primary'>Submit</button>
+
+
+      </select><br/><br/>
+
+      <label for="name" name={'name'}>Name:<span >*</span></label><br/>
+      <input type="text" id="name" name="firstName" onChange={handelChange} required={'true'}/>  <br /> <br />
+
+
+      <label for="email">Email:<span >*</span></label><br/>
+      <input type="email" id="email" name="email" onChange={handelChange} required={'true'}/><br/><br/>
+
+      <label for="phone">Phone Number: <span >*</span></label><br/>
+      <input type="tel" id="phone" name="phone" onChange={handelChange} required={'true'}/><br/><br/>
+
+    <button className='btn btn-primary' onClick={handelSubmit} type='submit'>Submit</button>
 <form />
     </div>
 </div>
@@ -366,16 +258,17 @@ with Our Experts</h2>
     <p>Ever find yourself staring at your computer screen <br /> a good consulting slogan to come to mind? <br /> Oftentimes.</p>
 </div>
 <div className="col-lg-6 col-md-6 col-sm-12">
-    <form action="" method='post'>
-    <label for="firstName">First Name:<span >*</span></label><br/>
-  <input type="text" id="firstName" name="firstName"/>  <br /> <br />
-  <label for="lastName">Last Name:<span >*</span></label><br/>
-  <input type="text" id="lastName" name="lastName"/> <br /> <br />
+    <form action="" method='post' className={''}>
+    <label for="firstName">Name:<span >*</span></label>
+  <input type="text" id="name" name="name" onChange={handelChange} className={'form-control'}/>
 
   <label for="email">Email:<span >*</span></label><br/>
-  <input type="email" id="email" name="email"/><br/><br/>
+  <input type="email" id="email" name="email" onChange={handelChange} className={'form-control'}/>
+
+        <label for="email">Phone:<span >*</span></label><br/>
+  <input type="email" id="phone" name="email" onChange={handelChange} className={'form-control'}/>
     
-  <button className='btn btn-primary '>Submit</button>
+  <button className='btn btn-primary mt-3' onClick={handelSubmit}>Submit</button>
 
     </form>
 </div>

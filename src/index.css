@@ -9,6 +9,7 @@
     --tg-section-background: #F8FAFF;
     --tg-heading-font-weight: 700;
     --tg-heading-line-height: 1.2;
+    --root_color: #8B322C;
 }
 body{
   overflow-x: hidden;

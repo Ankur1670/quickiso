@@ -1,8 +1,47 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './servicessec.css'
 import { IoIosArrowForward } from "react-icons/io";
 import c from '../../assets/c.png'
+import axios from "axios";
+
+const client = axios.create({
+    baseURL: import.meta.env.VITE__APP_URL,
+    headers:{
+        'Content-Type': 'application/json',
+
+    },
+});
+const Card = (obj) => {
+    console.log(obj)
+  return(
+      <div className="col-lg-3 col-md-6 col-sm-12">
+          <div className="card my-2">
+              <img className="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
+              <div className="card-body">
+                  <h2 className="card-title">{obj.name} <br /> ₹{obj.price}/-
+                  </h2>
+                  <p className="card-text">{obj.description}</p>
+                  <a href="#" className="btn ">
+                      See Details                                                </a>
+
+              </div>
+          </div>
+      </div>
+
+
+  )
+}
 const Servicessec = () => {
+    const [type, setType] = useState ([])
+
+    useEffect ( () => {
+        client.get('/certificate/type/views/').then((r)=>{
+            if(r.status===200){
+                console.log(r.data)
+                setType(r.data)
+            }
+        })
+    }, [] );
   return (
     <div className='ourservice'>
       <div className="ser_sec">
@@ -24,168 +63,8 @@ Services</h2>
 </div>
 <div className="container ">
 <div className="row">
-                 <div className="col-lg-3 col-md-6 col-sm-12  ">
-                 <div class="card my-2 " id='card_1'>
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 22000:2018 <br /> ₹4000/-
-</h2>
-    <p class="card-text">Food Safety Management Systems: Ensure the safety and quality of food products and supply chains.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 14001:2015 ₹2500/-
-</h2>
-    <p class="card-text">Environmental Management Systems: Demonstrate your commitment to environmental responsibility and sustainability.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 13485:2016 ₹4000/-
-</h2>
-    <p class="card-text">Medical Devices Quality Management Systems: Ensure the quality and safety of medical devices throughout their lifecycle.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 20000:2011 ₹5000/-
-</h2>
-    <p class="card-text">IT Service Management Systems: Improve the efficiency and effectiveness of your IT service delivery.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
+                {type.map(Card)}
 
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 22000:2018 ₹4000/-
-</h2>
-    <p class="card-text">Food Safety Management Systems: Ensure the safety and quality of food products and supply chains.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 29993:2010 ₹6000/-
-</h2>
-    <p class="card-text">Learning Services for Non-Formal Education and Training: Enhance the quality and effectiveness of your training and educational programs.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 27001:2022 ₹4000/-
-</h2>
-    <p class="card-text">Information Security Management Systems: Protect your sensitive information and data assets from security threats.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 45001:2018 ₹3000/-
-</h2>
-    <p class="card-text">Occupational Health and Safety Management Systems: Ensure a safe and healthy work environment for your employees while meeting legal and regulatory requirements.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-
-
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 22000:2018 <br /> ₹4000/-
-</h2>
-    <p class="card-text">Food Safety Management Systems: Ensure the safety and quality of food products and supply chains.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 14001:2015 ₹2500/-
-</h2>
-    <p class="card-text">Environmental Management Systems: Demonstrate your commitment to environmental responsibility and sustainability.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 13485:2016 ₹4000/-
-</h2>
-    <p class="card-text">Medical Devices Quality Management Systems: Ensure the quality and safety of medical devices throughout their lifecycle.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
-                 <div className="col-lg-3 col-md-6 col-sm-12">
-                 <div class="card my-2">
-  <img class="card-img-top w-25 px-2 mx-2 my-2" src={c} alt="Card image cap"/>
-  <div class="card-body">
-    <h2 class="card-title">ISO 20000:2011 ₹5000/-
-</h2>
-    <p class="card-text">IT Service Management Systems: Improve the efficiency and effectiveness of your IT service delivery.</p>
-    <a href="#" class="btn ">
-                                                See Details                                                </a>
-                                               
-  </div>
-</div>
-                 </div>
             </div>
 </div>
 
