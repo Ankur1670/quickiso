@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './banner.css';
-import img1 from '../../../assets/unlock.png';
-import get from '../../../assets/g2.png'
-import arrow from '../../../assets/1.png'
+import img1 from '../../../assets/7358610.png';
+import get from '../../../assets/7450159.png'
 import c from '../../../assets/c.png'
-import ra from '../../../assets/ra.png'
-import em from '../../../assets/em.png'
+import em from '../../../assets/7450186.png'
 import { LuPhoneCall } from "react-icons/lu";
 import axios from "axios";
 
@@ -65,7 +63,7 @@ console.log(data)
     }
   return (
    <div className="banner-section">
-    <div className="container bg-light">
+    <div className="container ">
     <span className="sub-title aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">We Are Expert In This Field</span>
     <div className="row">
         <div className="col-lg-5 col-md-5 col-sm-12">
