@@ -15,11 +15,11 @@ const Footer2 = () => {
 <img className='img-fluid mt-2' src={logo} alt="" />
 <p className='mx-5'>Build up on trust</p>
 <ul>
-    <li> <span className='mx-2'> <LuPhoneCall /> </span>+91 95483 50112</li>
+    <li> <span className='mx-2'> <LuPhoneCall /> </span>{import.meta.env.VITE__PHONE_NUMBER}</li>
     <li><span className='mx-2'><IoMdTime />
 </span>24*7 service available</li>
     <li > <span className='mx-2'><IoIosMail />
-</span>info@quickisocertification</li>
+</span>{import.meta.env.VITE__EMAIL}</li>
 </ul>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-12 menu">

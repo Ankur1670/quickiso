@@ -20,7 +20,7 @@ const Navbar = () => {
                                            
                                             
                                             <span>Hot Line Number</span> 
-                                            <a href="tel:+91 95483 50112">+91 95483 50112</a>
+                                            <a href={"tel:+"+import.meta.env.VITE__PHONE_NUMBER}>+{import.meta.env.VITE__PHONE_NUMBER}</a>
                                             
                                         </li>
     </ul>

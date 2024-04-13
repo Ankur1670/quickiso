@@ -14,6 +14,7 @@
     --tg-heading-font-weight: 700;
     --tg-body-line-height: 1.7;
     --tg-heading-line-height: 1.2;
+    --root_color: #8B322C;
 }
 body{
   overflow-x: hidden;
