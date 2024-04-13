@@ -7,7 +7,7 @@
     font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #4361ee;
+    color:var(--button_color);
     background: #e6eeff;
     border-radius: 50px;
     display: inline-block;
@@ -45,7 +45,9 @@
       button  {
         font-family: var(--tg-heading-font-family);
         text-transform: none;
-        background-color: blue;
+        background-color: var(--button_color);
+        color: black;
+
         color: white;
         line-height: 24px;
         padding: 10px;
@@ -164,7 +166,7 @@
         font-size: 13px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: #4361ee;
+        color:var(--button_color);
         background: #e6eeff;
         border-radius: 50px;
         display: inline-block;
@@ -179,7 +181,7 @@
 
 
    .svg_item{
-    fill: #4361ee;
+    fill:var(--button_color);
    }
    ul li{
     list-style: none;
@@ -208,7 +210,7 @@
     font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #4361ee;
+    color:var(--button_color);
     background: #e6eeff;
     border-radius: 50px;
     display: inline-block;
@@ -234,6 +236,10 @@
     line-height: 24px;
     padding: 10px;
     font-weight: 700;
+    background-color: var(--button_color);
+    border: var(--button_color);
+    color: black;
+
 }
 
 
@@ -274,15 +280,15 @@
     color: var(--tg-paragraph-color);
 }
  /* .card h2:hover{
-  background-color: #4361ee;
+  background-color:var(--button_color);
   color: #e6eeff;
 }
 .card p:hover{
-  background-color: #4361ee;
+  background-color:var(--button_color);
   color: #e6eeff;
 }
 .card:hover{
-  background-color: #4361ee;
+  background-color:var(--button_color);
 } */
 
 
@@ -299,7 +305,7 @@
   font-size: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #4361ee;
+  color:var(--button_color);
   background: #e6eeff;
   border-radius: 50px;
   display: inline-block;
@@ -322,7 +328,7 @@ justify-content: center;
   transition: .3s;
 }
 .certification_section  label{
-  color: #4361ee;
+  color:var(--button_color);
   font-family: var(--tg-heading-font-family);
   line-height: var(--tg-heading-line-height);
   font-weight: var(--tg-heading-font-weight);
@@ -347,7 +353,12 @@ justify-content: center;
 }
 .certification_section button{
   width: 200px;
+  background-color: var(--button_color);
+    border: var(--button_color);
+    color: black;
+
 }
+
 
 /* empower_section */
 .row .sub-title5{
@@ -355,7 +366,7 @@ justify-content: center;
     font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #4361ee;
+    color:var(--button_color);
     background: #e6eeff;
     border-radius: 50px;
     display: inline-block;
@@ -423,6 +434,10 @@ margin-top: 35px;
 .contact_section button{
   margin-top: 65px;
   margin-left: 83px;
+  background-color: var(--button_color);
+    border: var(--button_color);
+    color: black;
+
 }
 
 .request_section .container{
@@ -432,7 +447,7 @@ margin-top: 35px;
   background-size: cover;
 }
 .request_section  label{
-  color: #4361ee;
+  color:var(--button_color);
   font-family: var(--tg-heading-font-family);
   line-height: var(--tg-heading-line-height);
   font-weight: var(--tg-heading-font-weight);
@@ -467,6 +482,9 @@ margin-top: 35px;
 }
 .request_section button{
   margin-bottom: 15px;
+  background-color: var(--button_color);
+    border: var(--button_color);
+    color: black;
 }
 
 

@@ -10,6 +10,10 @@
     --tg-heading-font-weight: 700;
     --tg-heading-line-height: 1.2;
     --root_color: #8B322C;
+    --button_color:#b19bdc;
+    --button_hoverbackground: #ffff;
+    --button_textcolor:var(--button_color);
+    
 }
 body{
   overflow-x: hidden;
@@ -20,3 +24,16 @@ h1{
   line-height: var( --tg-heading-line-height);
   color : var(--tg-primary-color);
   }
+  /* .button{
+    background-color: var(--button_color);
+    border: var(--button_color);
+    color: #000000;
+  } */
+
+  .s_btn :hover{
+    background-color: var(--button_hoverbackground) ;
+    color: var(--button_textcolor);
+    border: 2px solid var(--button_color);
+  }
+
+  
