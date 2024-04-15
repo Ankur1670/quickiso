@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="container ">
             <div className="row">
                 <div className="col-lg-4 col-md-4 col-sm-12">
-<img className='img-fluid mt-2' src={localStorage.getItem('logo')} alt={} />
+<img className='img-fluid mt-2' src={localStorage.getItem('logo')}  />
 <p className='mx-5'>Build up on trust</p>
 <ul>
     <li> <span className='mx-2'> <LuPhoneCall /> </span>{localStorage.getItem('mobile_number')}</li>
