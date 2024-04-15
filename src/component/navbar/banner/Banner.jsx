@@ -235,7 +235,7 @@ with Our Experts</h2>
     <div className="container">
         <div className="row">
             <div className="col-lg-4 col-md-4 col-sm-12 call  mx-2">
-            <LuPhoneCall /> <span>Call For More Info <br />+91 95483 50112</span>
+            <LuPhoneCall /> <span>Call For More Info <br />{localStorage.getItem('mobile_number')}</span>
 
             </div>
             <div className="col-lg-4 col-md-4 col-sm-12">

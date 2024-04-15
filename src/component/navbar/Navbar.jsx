@@ -10,7 +10,7 @@ const Navbar = () => {
       };
   return (
     <nav className="navbar ">
-    <div className="navbar-logo img-fluid"><img src={logoq} alt="" /></div>
+    <div className="navbar-logo img-fluid"><img src={localStorage.getItem('logo')} alt="" /></div>
     <ul className={isOpen ? "navbar-links active" : "navbar-links "}>
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -20,7 +20,7 @@ const Navbar = () => {
                                            
                                             
                                             <span>Hot Line Number</span> 
-                                            <a href={"tel:+"+import.meta.env.VITE__PHONE_NUMBER}>+{import.meta.env.VITE__PHONE_NUMBER}</a>
+                                            <a href={"tel:+"+localStorage.getItem('mobile_number')}>{localStorage.getItem('mobile_number')}</a>
                                             
                                         </li>
     </ul>

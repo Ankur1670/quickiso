@@ -33,7 +33,7 @@
     font-size: var(--tg-body-font-size);
     font-weight: var(--tg-body-font-weight);
     line-height: var(--tg-body-line-height);
-    color: var(--tg-paragraph-color);
+    color: white;
 margin-top: 15px;
     cursor: pointer;
 
@@ -50,7 +50,7 @@ margin-top: 15px;
     font-size: var(--tg-body-font-size);
     font-weight: var(--tg-body-font-weight);
     line-height: var(--tg-body-line-height);
-    color: var(--tg-paragraph-color);
+    color: white;
 margin-top: 15px;
 }
 

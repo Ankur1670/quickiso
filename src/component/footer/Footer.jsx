@@ -12,14 +12,14 @@ const Footer = () => {
         <div className="container ">
             <div className="row">
                 <div className="col-lg-4 col-md-4 col-sm-12">
-<img className='img-fluid mt-2' src={logo} alt="" />
+<img className='img-fluid mt-2' src={localStorage.getItem('logo')} alt={} />
 <p className='mx-5'>Build up on trust</p>
 <ul>
-    <li> <span className='mx-2'> <LuPhoneCall /> </span>+{import.meta.env.VITE__PHONE_NUMBER}</li>
+    <li> <span className='mx-2'> <LuPhoneCall /> </span>{localStorage.getItem('mobile_number')}</li>
     <li><span className='mx-2'><IoMdTime />
 </span>24*7 service available</li>
     <li > <span className='mx-2'><IoIosMail />
-</span>{import.meta.env.VITE__EMAIL}</li>
+</span>{localStorage.getItem('email')}</li>
 </ul>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-12 menu">

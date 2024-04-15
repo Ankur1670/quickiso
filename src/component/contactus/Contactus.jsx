@@ -56,9 +56,9 @@ const Contactus = () => {
 <h4>Let's connect
 </h4>
 <div className="span_Sec">
-<span>Phone: +91 95483 50112 <br />
+<span>Phone: {localStorage.getItem('mobile_number')} <br />
 </span>
-<span>info@quickisocertification.com</span>
+<span>{localStorage.getItem('email')}</span>
 
 </div>
 <div className="form_sec">
