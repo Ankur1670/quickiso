@@ -144,7 +144,7 @@ Certification Services</h2>
 </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-12">
-                    <button className='btn btn-primary s_btn'>See All Services</button>
+                    <button className=' service_btn s_btn'>See All Services</button>
                 </div>
             </div>
         </div>
@@ -200,7 +200,7 @@ Certification Services</h2>
       <label for="phone">Phone Number: <span >*</span></label><br/>
       <input type="tel" id="phone" name="phone" onChange={handelChange} required={'true'}/><br/><br/>
 
-    <button className='btn btn-primary' onClick={handelSubmit} type='submit'>Submit</button>
+    <button className='service_btn' onClick={handelSubmit} type='submit'>Submit</button>
 <form />
     </div>
 </div>
@@ -242,7 +242,7 @@ with Our Experts</h2>
 <h2>Let’s Request a Schedule For Free Consultation</h2>
             </div>
             <div className="col-lg-3 col-md-4 col-sm-12">
-<button className='btn btn-primary'>Contact Us </button>
+<button className='service_btn'>Contact Us </button>
             </div>
         </div>
     </div>
@@ -266,7 +266,7 @@ with Our Experts</h2>
         <label for="email">Phone:<span >*</span></label><br/>
   <input type="email" id="phone" name="email" onChange={handelChange} className={'form-control'}/>
     
-  <button className='btn btn-primary mt-3' onClick={handelSubmit}>Submit</button>
+  <button className=' service_btn mt-3' onClick={handelSubmit}>Submit</button>
 
     </form>
 </div>
