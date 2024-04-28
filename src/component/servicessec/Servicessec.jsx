@@ -48,7 +48,7 @@ const Servicessec = () => {
       <div className="ourservice_heading text-center">
 <h2>Our Services
 </h2>
-<a className='' href="">Quick Iso Certification</a>  <span><IoIosArrowForward /> Contact us
+<a className='' href="">ONE Iso Certification</a>  <span><IoIosArrowForward /> Contact us
 </span>
 </div>
 </div>

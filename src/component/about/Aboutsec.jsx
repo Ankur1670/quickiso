@@ -15,7 +15,7 @@ const Aboutsec = () => {
       <div className="about_heading text-center">
       <h2>About Us
 </h2>
-<a className='' href="">Quick Iso Certification</a>  <span><IoIosArrowForward /> About us
+<a className='' href="">ONE Iso Certification</a>  <span><IoIosArrowForward /> About us
   </span>
       </div>
       </div>

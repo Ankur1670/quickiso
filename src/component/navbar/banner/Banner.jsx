@@ -91,12 +91,12 @@ console.log(data)
         <span className="sub-title2 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">GET TO KNOW US
 </span>
 <div className="heading mt-2">
-<h2>Why Choose Quick ISO <br />
+<h2>Why Choose ONE Iso <br />
 Certification for Your ISO <br />
 Certificate?</h2>  
 
 </div>
-<p>Quick ISO Certification is committed to excellence, ensuring each project receives our full expertise. We prioritize cost-effectiveness, foster teamwork for fresh ideas, and maintain an uncompromising standard of excellence. With a customer-first approach, we guarantee on-time delivery and expert guidance.</p>
+<p>ONE Iso Certification is committed to excellence, ensuring each project receives our full expertise. We prioritize cost-effectiveness, foster teamwork for fresh ideas, and maintain an uncompromising standard of excellence. With a customer-first approach, we guarantee on-time delivery and expert guidance.</p>
 
 
 <ul className="key_point">
@@ -221,9 +221,9 @@ Certification Services</h2>
                 <span className="sub-title5 aos-init aos-animate   " data-aos="fade-up" data-aos-delay="0">EMPOWERING BUSINESSES, ENSURING EXCELLENCE</span>
 <h2 className=' mt-2'>Plan your business strategy
 with Our Experts</h2>
-<p>At Quick ISO Certification, we pride ourselves on empowering businesses with ISO certification. With 235+ organizations certified and 9,000+ satisfied clients, we ensure excellence and compliance in the global marketplace</p>
+<p>At ONE Iso Certification, we pride ourselves on empowering businesses with ISO certification. With 235+ organizations certified and 9,000+ satisfied clients, we ensure excellence and compliance in the global marketplace</p>
 <p>Our commitment to quality and professionalism has earned us the trust of businesses of all sizes. Trust in our expertise to guide you through the certification process and unlock new opportunities for growth and success.</p>
-<p>At Quick ISO Certification, we pride ourselves on empowering businesses with ISO certification. With 235+ organizations certified and 9,000+ satisfied clients, we ensure excellence and compliance in the global marketplace</p>
+<p>At ONE Iso Certification, we pride ourselves on empowering businesses with ISO certification. With 235+ organizations certified and 9,000+ satisfied clients, we ensure excellence and compliance in the global marketplace</p>
 
                 </div>
             </div>
