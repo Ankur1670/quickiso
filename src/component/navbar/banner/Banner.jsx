@@ -15,7 +15,7 @@ const client = axios.create({
     },
 });
 const Card = (obj) => {
-    console.log(obj)
+
     return(
         <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="card my-2">
@@ -37,6 +37,17 @@ const Card = (obj) => {
 const Banner = () => {
     const [type, setType] = useState ([])
     const [data, setData] = useState ({})
+    const [happy_customer, setHappy_customer] = useState ([])
+    useEffect ( () => {
+        client.get('/details/').then((r)=>{
+            if(r.status===200){
+                console.log(r.data)
+                const data=r.data.find((obj)=>obj.name==='oneiso')
+                console.log(data)
+                setHappy_customer(data.happy_customer)
+            }
+        })
+    }, [] );
     useEffect ( () => {
         client.get('/certificate/type/views/').then((r)=>{
             if(r.status===200){
@@ -273,6 +284,14 @@ with Our Experts</h2>
         </div>
     </div>
    </div>
+       <div>
+           <h2 className={'text-center'}>Happy Customer</h2>
+           <div className={'row px-4'}>
+               {happy_customer?.map((obj,key)=><div key={key} className={'col-1'}> <img  className={'w-100'} src={obj.img}/></div>)}
+
+
+           </div>
+       </div>
    </div>
   )
 }
