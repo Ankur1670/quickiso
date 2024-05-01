@@ -287,7 +287,7 @@ with Our Experts</h2>
        <div>
            <h2 className={'text-center'}>Happy Customer</h2>
            <div className={'row px-4'}>
-               {happy_customer?.map((obj,key)=><div key={key} className={'col-1'}> <img  className={'w-100'} src={obj.img}/></div>)}
+               {happy_customer?.map((obj,key)=><div key={key} className={'col-md-1 col-12'}> <img  className={'w-100'} src={obj.img}/></div>)}
 
 
            </div>
