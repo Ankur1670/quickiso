@@ -81,7 +81,7 @@ console.log(data)
     <span className="sub-title aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">We Are Expert In This Field</span>
     <div className="row">
         <div className="col-lg-5 col-md-5 col-sm-12">
-            <h2>Unlock the Potential of Your Business with ISO Certification</h2>
+            <h2>Grow your business using ISO certification . <br /> One certifications will help you</h2>
             <p>we specialize in guiding businesses through the ISO certification process, helping them achieve excellence in quality management, environmental responsibility, occupational health and safety, and more.</p>
             <button className="  service_btn" onClick={()=>navigate('/services')}>Our Services</button>
         </div>
