@@ -6,6 +6,8 @@ import c from '../../../assets/c.png'
 import em from '../../../assets/7450186.png'
 import { LuPhoneCall } from "react-icons/lu";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
+
 
 const client = axios.create({
     baseURL: import.meta.env.VITE__APP_URL,
@@ -35,6 +37,7 @@ const Card = (obj) => {
     )
 }
 const Banner = () => {
+    const navigate =useNavigate();
     const [type, setType] = useState ([])
     const [data, setData] = useState ({})
     const [happy_customer, setHappy_customer] = useState ([])
@@ -80,7 +83,7 @@ console.log(data)
         <div className="col-lg-5 col-md-5 col-sm-12">
             <h2>Unlock the Potential of Your Business with ISO Certification</h2>
             <p>we specialize in guiding businesses through the ISO certification process, helping them achieve excellence in quality management, environmental responsibility, occupational health and safety, and more.</p>
-            <button className="  service_btn">Our Services</button>
+            <button className="  service_btn" onClick={()=>navigate('/services')}>Our Services</button>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12 image_section">
 <img  className='img-fluid' src={img1} alt="UnlockyourPotential" />
@@ -155,7 +158,7 @@ Certification Services</h2>
 </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-12">
-                    <button className=' service_btn s_btn'>See All Services</button>
+                    <button onClick={()=>navigate('/services')} className=' service_btn s_btn'>See All Services</button>
                 </div>
             </div>
         </div>
@@ -253,7 +256,7 @@ with Our Experts</h2>
 <h2>Let’s Request a Schedule For Free Consultation</h2>
             </div>
             <div className="col-lg-3 col-md-4 col-sm-12">
-<button className='service_btn'>Contact Us </button>
+<button className='service_btn' onClick={()=>navigate('/contact')}>Contact Us </button>
             </div>
         </div>
     </div>
